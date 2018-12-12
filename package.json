@@ -1,0 +1,9 @@
+{
+  "name": "swinebouk-svg",
+  "version": "0.1.0",
+  "description": "Create SVG for vowel charts",
+  "main": "index.js",
+  "repository": "git@github.com:schweinebauch-heroes/swinebouk-svg.git",
+  "author": "Johnny Lee-Othon",
+  "license": "MIT"
+}
