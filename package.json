@@ -2,8 +2,40 @@
   "name": "swinebouk-svg",
   "version": "0.1.0",
   "description": "Create SVG for vowel charts",
-  "main": "index.js",
   "repository": "git@github.com:schweinebauch-heroes/swinebouk-svg.git",
+  "license": "MIT",
   "author": "Johnny Lee-Othon",
-  "license": "MIT"
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "dependencies": {
+    "css-loader": "^2.0.1",
+    "immutable": "^4.0.0-rc.12",
+    "modern-normalize": "^0.5.0",
+    "snapsvg": "^0.5.1",
+    "style-loader": "^0.23.1",
+    "swinebouk": "^0.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-encoding-plugin": "^0.2.1",
+    "yaml": "^1.1.0"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "imports-loader": "^0.8.0",
+    "sort-package-json": "^1.17.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "envs": [
+      "browser",
+      "commonjs"
+    ],
+		"settings": {
+			"import/resolver": "webpack"
+		}
+  }
 }

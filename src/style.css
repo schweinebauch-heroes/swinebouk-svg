@@ -1,0 +1,40 @@
+.vowel-outer-svg {
+	width: auto;
+	height: auto;
+}
+
+.vowel-inner-svg {
+	width: 100%;
+	max-width: 700px;
+}
+
+.vowel-frame {
+	fill: none;
+	stroke: dimgray;
+	stroke-width: 0.4;
+}
+
+.vowel-inner-frame {
+	stroke: dimgray;
+	stroke-width: 0.4;
+}
+
+.vowel-marker {
+	fill: dimgray;
+	dominant-baseline: middle;
+	text-anchor: middle;
+}
+
+.vowel-label {
+	dominant-baseline: middle;
+}
+
+.vowel-label-rounded {
+	text-anchor: start;
+	transform: translateX(0.25em);
+}
+
+.vowel-label-unrounded {
+	text-anchor: end;
+	transform: translateX(-0.25em);
+}
