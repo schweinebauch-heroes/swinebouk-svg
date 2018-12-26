@@ -1,7 +1,7 @@
 import yaml from 'yaml';
 import swinebouk from 'swinebouk';
 
-import SvgVowelChart from './svg-vowel-chart';
+import SvgVowelChart from '../lib/svg-vowel-chart';
 
 import baseStyle from './base-style.css';
 

@@ -24,16 +24,16 @@ module.exports = {
 				use: 'imports-loader?this=>window,fix=>module.exports=0'
 			},
 			{
+				test: require.resolve('modern-normalize/modern-normalize.css'),
+				use: ['style-loader', 'css-loader']
+			},
+			{
 				test: require.resolve('./src/base-style.css'),
 				use: ['to-string-loader', 'css-loader']
 			},
 			{
 				test: require.resolve('./src/DejaVuSans.ttf'),
 				use: ['url-loader']
-			},
-			{
-				test: require.resolve('modern-normalize/modern-normalize.css'),
-				use: ['style-loader', 'css-loader']
 			}
 		]
 	},

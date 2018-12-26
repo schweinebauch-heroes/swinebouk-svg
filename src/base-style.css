@@ -1,10 +1,10 @@
 @font-face {
-	font-family: 'DejaVuSans';
-	src: url('./DejaVuSans.ttf');
+	font-family: "DejaVu Sans";
+	src: url("./DejaVuSans.ttf");
 }
 
 .vowel-outer-svg {
-	font-family: 'DejaVuSans';
+	font-family: "DejaVu Sans";
 	font-size: 1;
 }
 
