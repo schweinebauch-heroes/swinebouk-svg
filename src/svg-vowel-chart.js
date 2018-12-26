@@ -1,30 +1,33 @@
 import Snap from 'snapsvg';
 
-import './style.css';
-import 'modern-normalize/modern-normalize.css';
-
 export default class SvgVowelChart {
 	constructor(
 		options = {
-			padding: 0.1, // Percentage
-			heightPercent: 0.75, // Height relative to the top line
+			padding: 0.2, // Percentage
+			heightRatio: 0.75, // Height relative to the top line
 			lowerWidthRatio: 0.3, // Length of bottom line relative to top line
-			markerRadius: 1,
-			labelMargin: '0.25em', // Distance between marker and label
 			vowelMarker: '•'
 		}
 	) {
 		this._opts = options;
 	}
 
-	render(vowelList) {
+	render(vowelList, style = '') {
+		const normalizedVowelList = {
+			vowels: vowelList.vowels.map(normalizeVowels)
+		};
 		const element = document.createElement('svg');
 		element.setAttribute('viewbox', '0 0 100 100');
+
+		if (style) {
+			element.appendChild(createStyleElement(style));
+		}
+
 		element.classList.add('vowel-outer-svg');
 		const outerSvg = new Snap(element);
 		const innerSvg = this._createInnerSvg(outerSvg);
 		this._drawFrame(innerSvg);
-		this._drawVowels(innerSvg, vowelList);
+		this._drawVowels(innerSvg, normalizedVowelList);
 		return element;
 	}
 
@@ -33,7 +36,7 @@ export default class SvgVowelChart {
 	}
 
 	get _height() {
-		this.__height = this.__height || this._upperWidth * this._opts.heightPercent;
+		this.__height = this.__height || this._upperWidth * this._opts.heightRatio;
 		return this.__height;
 	}
 
@@ -74,9 +77,9 @@ export default class SvgVowelChart {
 		});
 	}
 
-	_drawVowels(svg, vowelList) {
-		console.log(vowelList);
-		vowelList.vowels.forEach((v, i) => this._drawVowel(svg, v, i));
+	_drawVowels(svg, normalizedVowelList) {
+		// Console.log(normalizedVowelList);
+		normalizedVowelList.vowels.forEach((v, i) => this._drawVowel(svg, v, i));
 	}
 
 	_drawVowel(svg, vowel, index) {
@@ -94,4 +97,20 @@ export default class SvgVowelChart {
 	_vowelY({close}) {
 		return -(close * this._height);
 	}
+}
+
+function normalizeVowels(vowel) {
+	return {
+		front: (vowel.front - 1) / 11,
+		close: (vowel.close - 1) / 11,
+		round: vowel.round,
+		label: vowel.label
+	};
+}
+
+function createStyleElement(content) {
+	const template = document.createElement('template');
+	template.innerHTML = `<style type="text/css">${content}</style>`;
+	console.log(template);
+	return template.content.firstChild;
 }

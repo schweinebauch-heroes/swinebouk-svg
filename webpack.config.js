@@ -4,7 +4,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		index: './src/index.js'
+	},
 	mode: 'development',
 	devServer: {
 		contentBase: './dist',
@@ -12,7 +14,7 @@ module.exports = {
 	},
 	devtool: 'inline-source-map',
 	output: {
-		filename: 'main.js',
+		filename: 'index.js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	module: {
@@ -22,7 +24,15 @@ module.exports = {
 				use: 'imports-loader?this=>window,fix=>module.exports=0'
 			},
 			{
-				test: /\.css$/,
+				test: require.resolve('./src/base-style.css'),
+				use: ['to-string-loader', 'css-loader']
+			},
+			{
+				test: require.resolve('./src/DejaVuSans.ttf'),
+				use: ['url-loader']
+			},
+			{
+				test: require.resolve('modern-normalize/modern-normalize.css'),
 				use: ['style-loader', 'css-loader']
 			}
 		]
