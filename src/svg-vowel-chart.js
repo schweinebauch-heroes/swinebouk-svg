@@ -1,4 +1,4 @@
-import Snap from 'snapsvg';
+const Snap = require('snapsvg/dist/snap.svg.js');
 
 export default class SvgVowelChart {
 	constructor(

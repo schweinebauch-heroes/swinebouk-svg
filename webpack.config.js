@@ -45,10 +45,5 @@ module.exports = {
 			title: 'Swinebouk'
 		}),
 		new webpack.HotModuleReplacementPlugin()
-	],
-	resolve: {
-		alias: {
-			snapsvg: 'snapsvg/dist/snap.svg.js'
-		}
-	}
+	]
 };
