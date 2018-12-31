@@ -5177,10 +5177,10 @@ supports-color@^5.1.0, supports-color@^5.3.0, supports-color@^5.5.0:
   dependencies:
     has-flag "^3.0.0"
 
-swinebouk@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/swinebouk/-/swinebouk-0.2.0.tgz#546a27db1e48a4feb21ef410c8c0e527705cd433"
-  integrity sha512-Fu2Jt6uKhsSgsZCWiQ/P3p0wB0oOhXv6V6wBIpuxt9y8AgRfths3CtXavVfMk+yq24hLKqUbF8AgqPSm32iuYw==
+swinebouk@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/swinebouk/-/swinebouk-0.3.0.tgz#6cfb80b28d721933701c4ca50f3d16dbc35e034d"
+  integrity sha512-opvIUfAUrIk+vBGQst167LomZJtti0lQIWTv+OOjTedaOlBU9V91y9BjxFBKJUfDOjYU5jUZMOpSA7iAqRmH4g==
   dependencies:
     ajv "^6.6.1"
     x-sampa "^0.1.1"

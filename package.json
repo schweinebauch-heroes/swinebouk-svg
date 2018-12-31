@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "snapsvg": "^0.5.1",
-    "swinebouk": "^0.2.0",
+    "swinebouk": "^0.3.0",
     "x-sampa": "^0.3.1"
   },
   "devDependencies": {

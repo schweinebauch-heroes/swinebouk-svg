@@ -15,7 +15,7 @@ function getInput() {
 	return parseYaml(text);
 }
 
-function vowelChartSvg() {
+function parseInputAndRender() {
 	const vowelList = new InputParser().parse(getInput());
 	const element = new SvgVowelChart().render(vowelList, baseStyle.toString());
 	element.id = 'svg-output';
@@ -26,10 +26,12 @@ function vowelChartSvg() {
 
 	const image = document.createElement('img');
 	image.setAttribute('src', 'data:image/svg+xml;charset=utf-8,' + element.outerHTML);
-	//
-	// // downloadLink.setAttribute('href', );
-	// // downloadLink.text = 'Download';
-	document.body.appendChild(image);
+	const link = document.createElement('a');
+	link.text = 'Download';
+	link.setAttribute('href', 'data:image/svg+xml;charset=base64,' + element.outerHTML);
+	link.id = 'sdlfksjdfkj';
+	link.setAttribute('download', 'vowel-chart.svg');
+	document.body.appendChild(link);
 }
 
-vowelChartSvg();
+parseInputAndRender();
