@@ -4,7 +4,6 @@
 }
 
 .vowel-outer-svg {
-	font-family: "DejaVu Sans";
 	font-size: 1;
 }
 
@@ -31,11 +30,16 @@
 
 .vowel-marker {
 	fill: dimgray;
-	dominant-baseline: middle;
-	text-anchor: middle;
+}
+
+.vowel-marker-rounded {
+}
+
+.vowel-marker-unrounded {
 }
 
 .vowel-label {
+	font-family: "DejaVu Sans";
 	dominant-baseline: middle;
 }
 
