@@ -5,6 +5,7 @@
   "repository": "git@github.com:schweinebauch-heroes/swinebouk-svg.git",
   "license": "MIT",
   "author": "Johnny Lee-Othon",
+  "main": "lib/svg-vowel-chart.js",
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server"
